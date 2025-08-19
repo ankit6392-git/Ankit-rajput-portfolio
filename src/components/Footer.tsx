@@ -19,17 +19,17 @@ const Footer: React.FC = () => {
   const socialLinks = [
     {
       icon: FiLinkedin,
-      href: 'https://linkedin.com/in/ankit-rajput',
+      href: 'https://www.linkedin.com/in/ankit-rajput-559857291/',
       label: 'LinkedIn'
     },
     {
       icon: FiGithub,
-      href: 'https://github.com/ankit-rajput',
+      href: 'https://github.com/ankit6392-git',
       label: 'GitHub'
     },
     {
       icon: FiMail,
-      href: 'mailto:ankit.rajput@email.com',
+      href: 'mailto:ankitrajput88073@gmail.com',
       label: 'Email'
     }
   ];
@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
               <div className="space-y-2 text-gray-300">
                 <p>Kanpur, Uttar Pradesh</p>
                 <p>India</p>
-                <p className="text-blue-400">ankit.rajput@email.com</p>
+                <p className="text-blue-400">ankitrajput88073@gmail.com</p>
               </div>
             </motion.div>
           </div>
