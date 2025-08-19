@@ -33,15 +33,15 @@ const Contact: React.FC = () => {
     {
       icon: FiMail,
       label: 'Email',
-      value: 'ankit.rajput@email.com',
-      href: 'mailto:ankit.rajput@email.com',
+      value: 'ankitrajput88073@egmail.com',
+      href: 'mailto:ankit.rajput88073@gmail.com',
       color: 'from-red-500 to-pink-500'
     },
     {
       icon: FiPhone,
       label: 'Phone',
-      value: '+91 XXXXX XXXXX',
-      href: 'tel:+91XXXXXXXXX',
+      value: '+91 6392669268',
+      href: 'tel:+916392669268',
       color: 'from-green-500 to-teal-500'
     },
     {
@@ -57,19 +57,19 @@ const Contact: React.FC = () => {
     {
       icon: FiLinkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/ankit-rajput',
+      href: 'https://www.linkedin.com/in/ankit-rajput-559857291/',
       color: 'hover:text-blue-600'
     },
     {
       icon: FiGithub,
       label: 'GitHub',
-      href: 'https://github.com/ankit-rajput',
+      href: 'https://github.com/ankit6392-git',
       color: 'hover:text-gray-900 dark:hover:text-white'
     },
     {
       icon: FiMail,
       label: 'Email',
-      href: 'mailto:ankit.rajput@email.com',
+      href: 'mailto:ankitrajput88073@gmail.com',
       color: 'hover:text-red-600'
     }
   ];
