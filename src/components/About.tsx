@@ -65,7 +65,7 @@ const About: React.FC = () => {
             <div className="prose prose-lg dark:prose-invert">
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 I am a dedicated MCA student at Pranveer Singh Institute of Technology, Kanpur, 
-                with a strong academic record (SGPA 8.39) and a passion for technology and innovation. 
+                with a strong academic record  and a passion for technology and innovation. 
                 My journey in computer applications has equipped me with a solid foundation in programming, 
                 web development, and database management.
               </p>
