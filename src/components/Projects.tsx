@@ -193,14 +193,14 @@ const Projects: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-             <a
+            
+            <FiGithub className="w-5 h-5 mr-2" />
+            View All Projects on GitHub  <a
       href="https://github.com/ankit6392-git"
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center text-blue-600 hover:underline"
     >
-            <FiGithub className="w-5 h-5 mr-2" />
-            View All Projects on GitHub
           </motion.button>
         </motion.div>
       </div>
