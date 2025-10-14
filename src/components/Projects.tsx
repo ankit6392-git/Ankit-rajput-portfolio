@@ -196,7 +196,7 @@ const Projects: React.FC = () => {
             
            
             <a
-      href="https://github.com/your-username" // 🔹 Replace with your GitHub URL
+      href="https://github.com/your-ankit6392-git" 
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
