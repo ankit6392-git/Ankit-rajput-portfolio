@@ -194,7 +194,7 @@ const Projects: React.FC = () => {
             whileTap={{ scale: 0.95 }}
           >
             <FiGithub className="w-5 h-5 mr-2" />
-            View All Projects on GitHub
+            View All Projects on GitHub<href>https://github.com/ankit6392-git</href>
           </motion.button>
         </motion.div>
       </div>
