@@ -195,12 +195,7 @@ const Projects: React.FC = () => {
           >
             
             <FiGithub className="w-5 h-5 mr-2" />
-            View All Projects on GitHub  <a
-      href="https://github.com/ankit6392-git"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center text-blue-600 hover:underline"
-    >
+            View All Projects on GitHub
           </motion.button>
         </motion.div>
       </div>
