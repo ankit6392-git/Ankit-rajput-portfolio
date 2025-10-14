@@ -194,8 +194,16 @@ const Projects: React.FC = () => {
             whileTap={{ scale: 0.95 }}
           >
             
-            <FiGithub className="w-5 h-5 mr-2" />
-            View All Projects on GitHub
+           
+            <a
+      href="https://github.com/your-username" // 🔹 Replace with your GitHub URL
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
+    >
+      <FiGithub className="w-5 h-5 mr-2" />
+       View All Projects on GitHub
+    </a>
           </motion.button>
         </motion.div>
       </div>
