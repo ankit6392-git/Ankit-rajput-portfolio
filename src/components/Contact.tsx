@@ -8,8 +8,8 @@ const Contact: React.FC = () => {
     email: '',
     message: ''
   });
- /*const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleSubmit = async (e: React.FormEvent) => {
+ const [isSubmitting, setIsSubmitting] = useState(false);
+  /*const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setIsSubmitting(true);
 
@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       }
-    );*/
+    );
 
     setIsSubmitting(false);
     alert("✅ Feedback submitted successfully!");
@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
     alert("❌ There was an error submitting your feedback.");
     console.error(error);
   }
-};
+};*/
 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
