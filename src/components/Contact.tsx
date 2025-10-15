@@ -38,7 +38,12 @@ const Contact: React.FC = () => {
       alert('Thank you for your message! I will get back to you soon.');
       setFormData({ name: '', email: '', message: '' });
     }, 2000);
-  };
+  }catch (error) {
+    console.error("Error submitting feedback:", error);
+    setIsSubmitting(false);
+    alert("❌ There was an error submitting your feedback. Please try again later.");
+  }
+};
 
   const contactInfo = [
     {
