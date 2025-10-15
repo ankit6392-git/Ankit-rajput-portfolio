@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
     email: '',
     message: ''
   });
- // const [isSubmitting, setIsSubmitting] = useState(false);
+ /*const [isSubmitting, setIsSubmitting] = useState(false);
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setIsSubmitting(true);
@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       }
-    );
+    );*/
 
     setIsSubmitting(false);
     alert("✅ Feedback submitted successfully!");
@@ -47,6 +47,16 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     
     // Simulate form submission
+      try {
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbx81N5FDHd0M6w5SBIyFHKiJR9LW5PjLAq6FgnR9nnYnOBbsdz1C6OuUb-lTVgL-n-vcw/exec", // ← your Google Script URL here
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      }
+    );
     setTimeout(() => {
       setIsSubmitting(false);
       alert('Thank you for your message! I will get back to you soon.');
