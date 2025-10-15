@@ -8,7 +8,32 @@ const Contact: React.FC = () => {
     email: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+ // const [isSubmitting, setIsSubmitting] = useState(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbx81N5FDHd0M6w5SBIyFHKiJR9LW5PjLAq6FgnR9nnYnOBbsdz1C6OuUb-lTVgL-n-vcw/exec", // ← your Google Script URL here
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    setIsSubmitting(false);
+    alert("✅ Feedback submitted successfully!");
+    setFormData({ name: "", email: "", message: "" });
+  } catch (error) {
+    setIsSubmitting(false);
+    alert("❌ There was an error submitting your feedback.");
+    console.error(error);
+  }
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
