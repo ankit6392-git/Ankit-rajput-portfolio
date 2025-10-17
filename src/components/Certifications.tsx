@@ -11,7 +11,8 @@ const Certifications: React.FC = () => {
       description: 'Comprehensive Python programming course covering fundamentals, data structures, and advanced concepts.',
       skills: ['Python Programming', 'Data Structures', 'Algorithms', 'Problem Solving'],
       logo: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=100',
-      color: 'from-blue-500 to-green-500'
+      color: 'from-blue-500 to-green-500',
+      link: 'https://coursera.org/share/d56bfcf603951a2196a8dd5c59387e99'
     },
     {
       title: 'Learn Java Programming',
@@ -20,7 +21,8 @@ const Certifications: React.FC = () => {
       description: 'Complete Java programming course from basics to advanced topics including OOP principles and frameworks.',
       skills: ['Java Programming', 'Object-Oriented Programming', 'Collections', 'Exception Handling'],
       logo: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=100',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      link:'https://www.udemy.com/certificate/UC-e1772ee8-6eec-41ae-b7b5-069263bf30c7/'
     }
   ];
 
@@ -109,11 +111,20 @@ const Certifications: React.FC = () => {
                 </div>
 
                 {/* View Certificate Button */}
-                <motion.button
+               <a href={cert.link}
+                target="_blank"
+               rel="noopener noreferrer"
+                  >
+                 <motion.button
                   className="w-full inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
+                   whileHover={{ scale: 1.02 }}
+                   whileTap={{ scale: 0.98 }}
+                     >
+    <FiExternalLink className="w-4 h-4 mr-2" />
+    View Certificate
+  </motion.button>
+</a>
+
                   <FiExternalLink className="w-4 h-4 mr-2" />
                   View Certificate
                 </motion.button>
