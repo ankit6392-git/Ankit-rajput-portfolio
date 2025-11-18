@@ -41,6 +41,7 @@ const Hero: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
+          
           {/* Profile Image */}
           <motion.div
             className="mb-8"
@@ -49,13 +50,15 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
-              <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <span className="text-4xl md:text-5xl font-bold text-gray-600 dark:text-gray-300">AR</span>
-              </div>
+              <img
+                src="/profile.png"  // <-- YOUR IMAGE HERE
+                alt="Profile"
+                className="w-full h-full object-cover rounded-full"
+              />
             </div>
           </motion.div>
 
-          {/* Animated Name */}
+          {/* Name */}
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-4"
             initial={{ opacity: 0, y: 50 }}
@@ -87,14 +90,24 @@ const Hero: React.FC = () => {
             Passionate about technology, development, and innovative problem-solving
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
+
+            {/* DOWNLOAD RESUME BUTTON */}
             <motion.button
+              onClick={() => {
+                const a = document.createElement('a');
+                a.href = '/resume.pdf';
+                a.download = 'Ankit-Rajput-Resume.pdf';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+              }}
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300"
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)" }}
               whileTap={{ scale: 0.95 }}
@@ -102,7 +115,8 @@ const Hero: React.FC = () => {
               <FiDownload className="mr-2" />
               Download Resume
             </motion.button>
-            
+
+            {/* CONTACT BUTTON */}
             <motion.button
               onClick={scrollToContact}
               className="inline-flex items-center px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 font-semibold rounded-full hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300"
@@ -112,6 +126,7 @@ const Hero: React.FC = () => {
               <FiMail className="mr-2" />
               Contact Me
             </motion.button>
+
           </motion.div>
         </div>
       </div>
