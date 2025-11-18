@@ -35,7 +35,7 @@ const Projects = () => {
         'Real-time responses',
         'Modern design patterns'
       ],
-      link: '',
+      link: 'https://virtual-assistant2.netlify.app/',
       repo: 'https://github.com/ankit6392-git/web-based-virtual-assistant',
       image:
         'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800'
@@ -47,7 +47,7 @@ const Projects = () => {
       techStack: ['HTML5', 'CSS3', 'JavaScript', 'DOM Manipulation'],
       date: '2024',
       features: ['Score tracking system', 'Smooth animations', 'Responsive design', 'Interactive gameplay'],
-      link: '',
+      link: 'https://rock-paper2.netlify.app/',
       repo: 'https://github.com/ankit6392-git/Rock-Paper-scissors-game',
       image:
         'https://images.pexels.com/photos/1040157/pexels-photo-1040157.jpeg?auto=compress&cs=tinysrgb&w=800'
