@@ -10,7 +10,7 @@ const Projects = () => {
       description:
         'A dynamic and engaging Free Fire tournament platform featuring smooth UI, responsive layout, player information section, and easy registration with real-time updates.',
       techStack: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Modern UI'],
-      date: '2024',
+      date: 'Nov 2025',
       features: [
         'Tournament registration system',
         'Responsive and mobile-friendly layout',
@@ -19,7 +19,7 @@ const Projects = () => {
         'Fast loading and optimized performance'
       ],
       link: 'https://free-fire-tournament-two.vercel.app/',
-      repo: '',
+      repo: 'https://github.com/ankit6392-git/Free_Fire_Tournament',
       image:
         'https://dl.dir.freefiremobile.com/common/web_event/official2.ff.garena.all/202210/aa959aa3d8790d3a44f7f20f16adfa01.jpg'
     },
@@ -36,7 +36,7 @@ const Projects = () => {
         'Modern design patterns'
       ],
       link: '',
-      repo: '',
+      repo: 'https://github.com/ankit6392-git/web-based-virtual-assistant',
       image:
         'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
@@ -48,7 +48,7 @@ const Projects = () => {
       date: '2024',
       features: ['Score tracking system', 'Smooth animations', 'Responsive design', 'Interactive gameplay'],
       link: '',
-      repo: '',
+      repo: 'https://github.com/ankit6392-git/Rock-Paper-scissors-game',
       image:
         'https://images.pexels.com/photos/1040157/pexels-photo-1040157.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
@@ -60,7 +60,7 @@ const Projects = () => {
       date: '2023',
       features: ['Advanced GSAP animations', 'Smooth scroll effects', 'Timeline animations', 'Performance optimized'],
       link: '',
-      repo: '',
+      repo: 'https://github.com/ankit6392-git/animated-home--page',
       image:
         'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
@@ -72,7 +72,7 @@ const Projects = () => {
       date: '2023',
       features: ['Mobile-first approach', 'Animated hamburger menu', 'Cross-browser compatibility', 'SEO optimized'],
       link: '',
-      repo: '',
+      repo: 'https://github.com/ankit6392-git/responsive-website',
       image:
         'https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?auto=compress&cs=tinysrgb&w=800'
     }
