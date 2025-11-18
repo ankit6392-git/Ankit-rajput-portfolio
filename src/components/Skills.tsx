@@ -8,10 +8,10 @@ const Skills: React.FC = () => {
       icon: FiCode,
       title: 'Programming Languages',
       skills: [
-        { name: 'Python', level:  },
-        { name: 'C++', level: 80 },
-        { name: 'C', level: 75 },
-        { name: 'Java', level: 70 }
+        { name: 'Python'  },
+        { name: 'C++' },
+        { name: 'C' },
+        { name: 'Java' }
       ]
     },
     {
