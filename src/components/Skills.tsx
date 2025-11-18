@@ -1,28 +1,28 @@
+// Skills.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  FiCode,
-  FiGlobe,
-  FiDatabase,
-  FiTool
-} from 'react-icons/fi';
+import { FiCode, FiGlobe, FiDatabase, FiTool } from 'react-icons/fi';
 
 // Skill-specific icons (react-icons)
-import { SiPython, SiCplusplus, SiC, SiJava, SiHtml5, SiCss3, SiJavascript, SiReact, SiMysql, SiMongodb, SiGit, SiMicrosoftoffice, SiGnubash, SiVisualstudiocode } from 'react-icons/si';
-import { TbBrandOracle } from 'react-icons/tb'; // oracle-ish icon
-import { IconType } from 'react-icons';
+import {
+  SiPython,
+  SiCplusplus,
+  SiC,
+  SiJava,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiMysql,
+  SiMongodb,
+  SiGit,
+  SiMicrosoftoffice,
+  SiGnubash,
+  SiVisualstudiocode
+} from 'react-icons/si';
+import { TbBrandOracle } from 'react-icons/tb';
 
-type SkillItem = {
-  name: string;
-  Icon: IconType;
-  colorClass: string; // Tailwind color class to tint icon
-};
-
-const skillCategories: {
-  icon: IconType;
-  title: string;
-  skills: SkillItem[];
-}[] = [
+const skillCategories = [
   {
     icon: FiCode,
     title: 'Programming Languages',
@@ -64,7 +64,7 @@ const skillCategories: {
   }
 ];
 
-const Skills: React.FC = () => {
+const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -104,13 +104,13 @@ const Skills: React.FC = () => {
                   </h3>
                 </div>
 
-                {/* GRID of skills */}
+                {/* Grid of skill tiles */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {category.skills.map((skill, sidx) => {
-                    const { Icon, name, colorClass } = skill;
+                    const Icon = skill.Icon;
                     return (
                       <motion.div
-                        key={name}
+                        key={skill.name}
                         className="group relative flex items-center gap-3 p-3 rounded-lg cursor-pointer bg-white/60 dark:bg-gray-700/60 backdrop-blur-sm hover:shadow-lg transition-shadow"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -118,20 +118,12 @@ const Skills: React.FC = () => {
                         transition={{ duration: 0.18, delay: idx * 0.06 + sidx * 0.03 }}
                         viewport={{ once: true }}
                       >
-                        {/* Icon circle */}
-                        <div
-                          className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-gray-800 ${colorClass} bg-opacity-8`}
-                          // keep icon colored using text color class on the Icon itself
-                        >
-                          <Icon className={`${colorClass} w-6 h-6`} />
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-gray-800">
+                          <Icon className={`${skill.colorClass} w-6 h-6`} />
                         </div>
 
-                        {/* Name */}
-                        <span className="text-gray-800 dark:text-gray-100 font-medium">
-                          {name}
-                        </span>
+                        <span className="text-gray-800 dark:text-gray-100 font-medium">{skill.name}</span>
 
-                        {/* subtle hover badge */}
                         <span className="absolute right-3 top-3 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-gray-500 dark:text-gray-300">
                           Tap
                         </span>
@@ -144,7 +136,7 @@ const Skills: React.FC = () => {
           })}
         </div>
 
-        {/* Additional Techs as colored pills in a grid */}
+        {/* Additional Technologies */}
         <motion.div
           className="mt-12"
           initial={{ opacity: 0, y: 20 }}
@@ -178,9 +170,7 @@ const Skills: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <span className={`${tech.color} w-3 h-3 rounded-full inline-block`} />
-                <span className="text-sm text-gray-800 dark:text-gray-100 font-medium">
-                  {tech.name}
-                </span>
+                <span className="text-sm text-gray-800 dark:text-gray-100 font-medium">{tech.name}</span>
               </motion.div>
             ))}
           </div>
