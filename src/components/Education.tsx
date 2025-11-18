@@ -22,11 +22,19 @@ const Education: React.FC = () => {
     },
     {
       degree:'XII th',
-      institution: 'RPS Inter College,Rasulabad',
-      duration: '2020-2021',
+      institution: 'RPS Inter College,Rasulabad Kanpur Dehat',
+      duration: 'Apr 2020- Apr 2021',
       grade: '82.20%',
       status: 'Completed',
-      description: ''
+      description: 'i have completed my class 12-high school education at RPS Inter College Rasulabad where I studied Science'
+    },
+    {
+      degree: 'X th',
+      institution:'RPS Inter College Rasulabad Kanpur Dehat',
+      durataion: 'Apr 2017- Apr 2018',
+      grade:'79.83%',
+      status:'Completed',
+      description:'I have completed my 10 education at JNVM IC vikas nagar kanpur, where i studied Science with English'
     }
   ];
 
