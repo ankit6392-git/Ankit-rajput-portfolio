@@ -19,6 +19,14 @@ const Education: React.FC = () => {
       grade: 'CGPA 8.01',
       status: 'Completed',
       description: 'Comprehensive study of computer applications, programming languages, and database management systems.'
+    },
+    {
+      degree:'XII th',
+      institution: 'RPS Inter College,Rasulabad',
+      duration: '2020-2021',
+      grade: '82.20%',
+      status: 'Completed',
+      description: ''
     }
   ];
 
