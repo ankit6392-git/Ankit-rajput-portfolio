@@ -1,8 +1,9 @@
+// Projects.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiCalendar, FiCode } from 'react-icons/fi';
 
-const Projects: React.FC = () => {
+const Projects = () => {
   const projects = [
     {
       title: 'Free Fire Tournament Website',
@@ -18,7 +19,6 @@ const Projects: React.FC = () => {
         'Fast loading and optimized performance'
       ],
       link: 'https://free-fire-tournament-two.vercel.app/',
-      // optional repo (add real repo url if you have one)
       repo: '',
       image:
         'https://dl.dir.freefiremobile.com/common/web_event/official2.ff.garena.all/202210/aa959aa3d8790d3a44f7f20f16adfa01.jpg'
@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
         'Real-time responses',
         'Modern design patterns'
       ],
-      // example repo placeholder
+      link: '',
       repo: '',
       image:
         'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800'
@@ -47,6 +47,7 @@ const Projects: React.FC = () => {
       techStack: ['HTML5', 'CSS3', 'JavaScript', 'DOM Manipulation'],
       date: '2024',
       features: ['Score tracking system', 'Smooth animations', 'Responsive design', 'Interactive gameplay'],
+      link: '',
       repo: '',
       image:
         'https://images.pexels.com/photos/1040157/pexels-photo-1040157.jpeg?auto=compress&cs=tinysrgb&w=800'
@@ -58,6 +59,7 @@ const Projects: React.FC = () => {
       techStack: ['HTML5', 'CSS3', 'JavaScript', 'GSAP', 'ScrollTrigger'],
       date: '2023',
       features: ['Advanced GSAP animations', 'Smooth scroll effects', 'Timeline animations', 'Performance optimized'],
+      link: '',
       repo: '',
       image:
         'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800'
@@ -69,11 +71,15 @@ const Projects: React.FC = () => {
       techStack: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'CSS Grid'],
       date: '2023',
       features: ['Mobile-first approach', 'Animated hamburger menu', 'Cross-browser compatibility', 'SEO optimized'],
+      link: '',
       repo: '',
       image:
         'https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?auto=compress&cs=tinysrgb&w=800'
     }
   ];
+
+  // helper to determine if a URL exists and is not empty
+  const hasUrl = (u) => typeof u === 'string' && u.trim().length > 0;
 
   return (
     <section id="projects" className="py-20 bg-white dark:bg-gray-900">
@@ -93,22 +99,34 @@ const Projects: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={project.title}
               className="bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.8, delay: index * 0.12 }}
               viewport={{ once: true }}
-              whileHover={{
-                scale: 1.02,
-                boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
-              }}
+              whileHover={{ scale: 1.02, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
             >
-              {/* Project Image */}
+              {/* Project Image (clickable if link exists) */}
               <div className="relative h-48 overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                {hasUrl(project.link) ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} - Live demo`}
+                    className="block w-full h-full"
+                  >
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" aria-hidden />
+                  </a>
+                ) : (
+                  <>
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" aria-hidden />
+                  </>
+                )}
 
                 {/* Date Badge */}
                 <div className="absolute top-4 right-4">
@@ -132,11 +150,15 @@ const Projects: React.FC = () => {
                     Tech Stack
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {project.techStack?.map((tech: string) => (
-                      <span key={tech} className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">
-                        {tech}
-                      </span>
-                    ))}
+                    {Array.isArray(project.techStack) &&
+                      project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                   </div>
                 </div>
 
@@ -144,25 +166,31 @@ const Projects: React.FC = () => {
                 <div className="mb-6">
                   <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Key Features</h4>
                   <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
-                    {project.features?.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                        {feature}
-                      </li>
-                    ))}
+                    {Array.isArray(project.features) &&
+                      project.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
                   </ul>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex space-x-4">
-                  {/* View Code (uses project.repo if provided, otherwise falls back to project.link or '#' ) */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  {/* View Code */}
                   <motion.a
-                    href={project.repo || project.link || '#'}
-                    target={project.repo || project.link ? '_blank' : undefined}
-                    rel={project.repo || project.link ? 'noopener noreferrer' : undefined}
-                    className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    href={hasUrl(project.repo) ? project.repo : hasUrl(project.link) ? project.link : '#'}
+                    target={hasUrl(project.repo) || hasUrl(project.link) ? '_blank' : undefined}
+                    rel={hasUrl(project.repo) || hasUrl(project.link) ? 'noopener noreferrer' : undefined}
+                    className={`flex-1 inline-flex items-center justify-center px-4 py-2 ${
+                      hasUrl(project.repo) || hasUrl(project.link)
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg'
+                        : 'bg-gray-300 text-gray-700 cursor-not-allowed'
+                    } font-medium rounded-lg transition-all duration-300`}
+                    whileHover={hasUrl(project.repo) || hasUrl(project.link) ? { scale: 1.03 } : {}}
+                    whileTap={hasUrl(project.repo) || hasUrl(project.link) ? { scale: 0.97 } : {}}
+                    aria-disabled={!hasUrl(project.repo) && !hasUrl(project.link)}
                   >
                     <FiGithub className="w-4 h-4 mr-2" />
                     View Code
@@ -170,19 +198,24 @@ const Projects: React.FC = () => {
 
                   {/* Live Demo */}
                   <motion.a
-                    href={project.link || '#'}
-                    target={project.link ? '_blank' : undefined}
-                    rel={project.link ? 'noopener noreferrer' : undefined}
-                    className="flex-1 inline-flex items-center justify-center px-4 py-2 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 font-medium rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    href={hasUrl(project.link) ? project.link : '#'}
+                    target={hasUrl(project.link) ? '_blank' : undefined}
+                    rel={hasUrl(project.link) ? 'noopener noreferrer' : undefined}
+                    className={`flex-1 inline-flex items-center justify-center px-4 py-2 border-2 font-medium rounded-lg transition-all duration-300 ${
+                      hasUrl(project.link)
+                        ? 'border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900'
+                        : 'border-gray-300 text-gray-700 cursor-not-allowed'
+                    }`}
+                    whileHover={hasUrl(project.link) ? { scale: 1.03 } : {}}
+                    whileTap={hasUrl(project.link) ? { scale: 0.97 } : {}}
+                    aria-disabled={!hasUrl(project.link)}
                   >
                     <FiExternalLink className="w-4 h-4 mr-2" />
                     Live Demo
                   </motion.a>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
 
