@@ -5,6 +5,21 @@ import { FiGithub, FiExternalLink, FiCalendar, FiCode } from 'react-icons/fi';
 const Projects: React.FC = () => {
   const projects = [
     {
+  title: 'Free Fire Tournament Website',
+  description: 'A dynamic and engaging Free Fire tournament platform featuring smooth UI, responsive layout, player information section, and easy registration with real-time updates.',
+  techStack: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Modern UI'],
+  date: '2024',
+  features: [
+    'Tournament registration system',
+    'Responsive and mobile-friendly layout',
+    'Clean and modern gaming UI',
+    'Player information & match details',
+    'Fast loading and optimized performance'
+  ],
+  link: 'https://free-fire-tournament-two.vercel.app/',
+  image: 'https://dl.dir.freefiremobile.com/common/web_event/official2.ff.garena.all/202210/aa959aa3d8790d3a44f7f20f16adfa01.jpg'
+},
+     {
       title: 'Emma – Web-Based Virtual Assistant',
       description: 'An intelligent web-based virtual assistant built with modern web technologies, featuring voice recognition, natural language processing, and interactive responses.',
       techStack: ['HTML5', 'CSS3', 'JavaScript', 'Web APIs', 'Speech Recognition'],
