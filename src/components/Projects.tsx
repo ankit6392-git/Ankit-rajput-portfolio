@@ -20,8 +20,8 @@ const Projects = () => {
       ],
       link: 'https://free-fire-tournament-two.vercel.app/',
       repo: 'https://github.com/ankit6392-git/Free_Fire_Tournament',
-      image:
-        'https://dl.dir.freefiremobile.com/common/web_event/official2.ff.garena.all/202210/aa959aa3d8790d3a44f7f20f16adfa01.jpg'
+      image: "/freefire.jpg"
+
     },
     {
       title: 'Emma – Web-Based Virtual Assistant',
